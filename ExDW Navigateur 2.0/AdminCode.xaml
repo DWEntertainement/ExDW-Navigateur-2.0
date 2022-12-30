@@ -39,7 +39,7 @@
         </DockPanel>
         <!-- Admin Code-->
         <Canvas Grid.Row="2" Margin="131,0,0,15" x:Name="canvas">
-            <RichTextBox Grid.Row="2" x:Name="codingTxt" IsReadOnly="True" AcceptsTab="True" AutoWordSelection="False" AcceptsReturn="True" Background="#FF737070" Height="369" Width="627" HorizontalAlignment="Left" Canvas.Left="32" VerticalAlignment="Center"/>
+            <RichTextBox Grid.Row="2" x:Name="codingTxt" IsReadOnly="True" AcceptsTab="True" AutoWordSelection="False" AcceptsReturn="True" Background="#FF737070" Height="369" Width="540" HorizontalAlignment="Left" Canvas.Left="37" VerticalAlignment="Center"/>
             <TextBox Grid.Row="2"  Text="1.
                      2.
                      3.
@@ -72,9 +72,10 @@
                     </TransformGroup>
                 </UIElement.RenderTransform>
             </TextBox>
+            <ScrollViewer Grid.Row="2" Background="#FF737070" Height="369" Width="92" HorizontalAlignment="Left" Canvas.Left="577" VerticalAlignment="Center" Opacity="0.5"/>
         </Canvas>
-        <!--Frame Admin Code-->
-        <Frame Grid.Row="2" x:Name="frame" Margin="0,5,669,10"/>
+        <!--ListBox Admin Code-->
+        <ListBox Grid.Row="2" d:ItemsSource="{d:SampleData ItemCount=20}" Margin="0,0,669,15"/>
         <!-- StatusBar-->
         <StatusBar Grid.Row="2" Margin="0,369,0,-7">
             <UIElement.RenderTransform>
