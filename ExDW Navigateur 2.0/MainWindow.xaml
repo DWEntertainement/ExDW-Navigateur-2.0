@@ -1,0 +1,62 @@
+﻿<Window x:Class="ExDW_Navigateur_2._0.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExDW_Navigateur_2._0"
+        mc:Ignorable="d"
+        Title="ExDW" Height="768" Width="1360" WindowState="Normal" WindowStyle="ToolWindow" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition Height="45"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <DockPanel VerticalAlignment="Center" Height="25" Grid.ColumnSpan="2">
+            <Menu Height="25" DockPanel.Dock="Top" Width="auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <MenuItem Header="_Fichier">
+                    <MenuItem Header="_Nouveau"/>
+                    <MenuItem Header="_Ouvrir"/>
+                    <MenuItem Header="_Quitter" Click="MenuItem_Click"/>
+                </MenuItem>
+                <MenuItem Header="_Edition">
+                    <MenuItem Header="_Selection All"/>
+                    <MenuItem Header="_Copier"/>
+                    <MenuItem Header="_Couper"/>
+                    <MenuItem Header="_Coller"/>
+                </MenuItem>
+                <MenuItem Header="_Admin Code">
+                    <MenuItem Header="_Inspecter le Code"/>
+                    <MenuItem Header="_Editer le code"/>
+                    <MenuItem Header="_Sauvegarder le Code"/>
+                    <MenuItem Header="_Nouveau Code" Click="Nouveau_Code_Click"/>
+                    <MenuItem Header="_Console Web Code"/>
+                    <MenuItem Header="_Debbogue Code"/>
+                    <MenuItem Header="_Test Code"/>
+                </MenuItem>
+                <Button Content="Favoris" Click="Favoris_Click"/>
+                <Button Content="?"/>
+            </Menu>
+        </DockPanel>
+        <!---Control-->
+        <TabControl Grid.Row="1">
+            <TabItem Header="Onglet1">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="Onglet2">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+        </TabControl>
+        <!--Barre recherche-->
+        <TextBox x:Name="urlTxt" Grid.Row="2" Text="https://" TextWrapping="Wrap" Margin="388,12,565,11"/>
+        <Button Grid.Row="2" Content="Rechercher" Click="Rechercher_Click" Margin="860,12,321,10"/>
+
+        <Button Grid.Row="2" Content="⮘" Click="Back_Click" Margin="243,11,1076,11"/>
+        <Button Grid.Row="2" Content="⮚" Click="Forward_Click" Margin="308,10,1009,12"/>
+        <!--Navigateur-->
+        <WebBrowser Grid.Row="3" Source="http://exadwentertainement.ovh/index.php" x:Name="navigateur" Margin="199,0,0,0"/>
+        <!--Frame-->
+        <Frame Grid.Row="3" x:Name="frame" Margin="0,0,1166,0"/>
+    </Grid>
+</Window>
